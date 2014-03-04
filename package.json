@@ -1,0 +1,25 @@
+{
+  "name": "arena-ini",
+  "version": "0.0.0",
+  "description": "INI file parser for ArenaNet-style configs",
+  "main": "lib/ini.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tivac/arena-ini.git"
+  },
+  "author": "Patrick Cavit <pcavit@gmail.com> (http://patcavit.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tivac/arena-ini/issues"
+  },
+  "homepage": "https://github.com/tivac/arena-ini",
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  }
+}
