@@ -43,7 +43,7 @@ describe("arena-ini", function() {
             var o = ini(fs.readFileSync("./test/specimens/comments.ini", "utf8"));
             
             assert(o["Fooga.Booga"]);
-            assert(o["Yooga"]);
+            assert(o.Yooga);
 
             assert.deepEqual(
                 o["Fooga.Booga"][1],
@@ -57,7 +57,7 @@ describe("arena-ini", function() {
             );
 
             assert.deepEqual(
-                o["Yooga"][0],
+                o.Yooga[0],
                 {
                     name   : "Fooga",
                     value  : "Nooga",
