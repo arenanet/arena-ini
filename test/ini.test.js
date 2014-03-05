@@ -11,8 +11,6 @@ describe("arena-ini", function() {
         it("should parse simple configs", function() {
             var o = ini(fs.readFileSync("./test/specimens/simple.ini", "utf8"));
             
-            //console.log(JSON.stringify(o, null, 4));
-
             assert(o["Fooga.Booga"]);
             assert(o.woo);
 
@@ -25,6 +23,46 @@ describe("arena-ini", function() {
                         "Looga",
                         "Wooga",
                         "Googa"
+                    ]
+                }
+            );
+
+            assert.deepEqual(
+                o["Fooga.Booga"][1],
+                {
+                    name   : "Rooga",
+                    value  : "Tooga",
+                    values : [
+                        "Tooga"
+                    ]
+                }
+            );
+        });
+
+        it("should ignore comments", function() {
+            var o = ini(fs.readFileSync("./test/specimens/comments.ini", "utf8"));
+            
+            assert(o["Fooga.Booga"]);
+            assert(o["Yooga"]);
+
+            assert.deepEqual(
+                o["Fooga.Booga"][1],
+                {
+                    name   : "Rooga",
+                    value  : "Tooga",
+                    values : [
+                        "Tooga"
+                    ]
+                }
+            );
+
+            assert.deepEqual(
+                o["Yooga"][0],
+                {
+                    name   : "Fooga",
+                    value  : "Nooga",
+                    values : [
+                        "Nooga"
                     ]
                 }
             );
