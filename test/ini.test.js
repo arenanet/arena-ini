@@ -67,5 +67,36 @@ describe("arena-ini", function() {
                 }
             );
         });
+
+        it("should allow repeated rules", function() {
+            var o = ini(fs.readFileSync("./test/specimens/repeated.ini", "utf8"));
+
+            assert(o["Fooga.Booga"]);
+            assert(o.woo);
+
+            assert.deepEqual(
+                o["Fooga.Booga"][0],
+                {
+                    name   : "Nooga",
+                    value  : "Looga, Wooga, Googa",
+                    values : [
+                        "Looga",
+                        "Wooga",
+                        "Googa"
+                    ]
+                }
+            );
+
+            assert.deepEqual(
+                o["Fooga.Booga"][3],
+                {
+                    name   : "Nooga",
+                    value  : "Yooga wooga booga",
+                    values : [
+                        "Yooga wooga booga"
+                    ]
+                }
+            );
+        });
     });
 });
