@@ -5,6 +5,7 @@ INI line-by-line parser for ArenaNet-styled INI files
 
 ## Usage ##
 
+```javascript
 var fs     = require("fs"),
     parser = require("arena-ini"),
     ini;
@@ -55,3 +56,4 @@ ini = parser(fs.readFileSync("./test.ini", "utf8"));
  * }
  *
  */
+```
