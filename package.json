@@ -1,6 +1,6 @@
 {
   "name": "arena-ini",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "INI file parser for ArenaNet-style configs",
   "main": "lib/ini.js",
   "directories": {
