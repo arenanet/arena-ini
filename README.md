@@ -1,6 +1,8 @@
 arena-ini
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/arenanet/arena-ini.svg)](https://greenkeeper.io/)
+
 INI line-by-line parser for ArenaNet-styled INI files. Supports duplicated keys per section because that's how we write INI files.
 
 ## Usage ##
